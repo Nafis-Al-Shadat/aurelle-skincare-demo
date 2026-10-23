@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurelle Skin — Gentle skincare for every morning</title>
+  <meta name="description" content="Concept landing page for a fictional skincare brand. Designed and built by Nafis A.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announce">Free shipping on orders over $40 · <span>Concept demo — not a real store</span></div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo">aurelle<span>.</span></a>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#routine">Routine</a>
+        <a href="#ingredients">Ingredients</a>
+        <a href="#bundle">Bundle</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header__actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">New · The Morning Ritual Set</p>
+          <h1>Skin that feels like <em>morning light.</em></h1>
+          <p class="lead">Three gentle steps, plant-powered formulas and nothing your skin doesn't need. Built for busy mornings and sensitive skin.</p>
+          <div class="hero__cta">
+            <a href="#shop" class="btn btn--primary">Shop the routine</a>
+            <a href="#ingredients" class="btn btn--ghost">See ingredients</a>
+          </div>
+          <ul class="hero__points">
+            <li>Vegan formulas</li>
+            <li>Fragrance-free options</li>
+            <li>Recyclable glass</li>
+          </ul>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="blob blob--1"></div>
+          <div class="blob blob--2"></div>
+          <svg class="bottle bottle--tall" viewBox="0 0 120 260"><rect x="45" y="0" width="30" height="34" rx="6" fill="#1F3B34"/><rect x="38" y="30" width="44" height="14" rx="4" fill="#2C5148"/><rect x="14" y="44" width="92" height="210" rx="34" fill="#E9D5C3"/><rect x="26" y="120" width="68" height="70" rx="10" fill="#F6F1EA"/><text x="60" y="152" text-anchor="middle" font-family="Fraunces" font-size="13" fill="#1F3B34">aurelle</text><text x="60" y="172" text-anchor="middle" font-family="Inter" font-size="8" fill="#6B6157">SERUM</text></svg>
+          <svg class="bottle bottle--jar" viewBox="0 0 160 130"><rect x="16" y="0" width="128" height="34" rx="10" fill="#C8775A"/><rect x="6" y="30" width="148" height="96" rx="24" fill="#F3E7DA"/><text x="80" y="84" text-anchor="middle" font-family="Fraunces" font-size="15" fill="#1F3B34">aurelle</text></svg>
+          <svg class="bottle bottle--pump" viewBox="0 0 100 220"><rect x="44" y="0" width="12" height="30" fill="#1F3B34"/><rect x="30" y="0" width="34" height="10" rx="4" fill="#1F3B34"/><rect x="34" y="28" width="32" height="18" rx="4" fill="#2C5148"/><rect x="10" y="44" width="80" height="172" rx="20" fill="#A8BFB1"/><rect x="20" y="110" width="60" height="56" rx="8" fill="#F6F1EA"/><text x="50" y="142" text-anchor="middle" font-family="Fraunces" font-size="11" fill="#1F3B34">aurelle</text></svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Gentle on sensitive skin</span><span>✦</span><span>Lightweight textures</span><span>✦</span><span>Cruelty-free</span><span>✦</span><span>Plastic-light packaging</span><span>✦</span>
+        <span>Gentle on sensitive skin</span><span>✦</span><span>Lightweight textures</span><span>✦</span><span>Cruelty-free</span><span>✦</span><span>Plastic-light packaging</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- SHOP -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Shop</p>
+          <h2>Everything your routine needs</h2>
+        </div>
+        <div class="filters reveal" role="tablist">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="cleanse">Cleanse</button>
+          <button class="filter" data-filter="treat">Treat</button>
+          <button class="filter" data-filter="hydrate">Hydrate</button>
+        </div>
+        <div class="products" id="products"></div>
+      </div>
+    </section>
+
+    <!-- ROUTINE -->
+    <section class="section section--tint" id="routine">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">The routine</p>
+          <h2>Three steps. Five minutes.</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="step__num">01</span><h3>Cleanse</h3><p>A low-foam gel cleanser lifts away the night without leaving skin tight.</p></li>
+          <li class="step reveal"><span class="step__num">02</span><h3>Treat</h3><p>A lightweight niacinamide serum to even out tone and calm redness.</p></li>
+          <li class="step reveal"><span class="step__num">03</span><h3>Hydrate</h3><p>A whipped ceramide cream that locks in moisture all day — no greasy finish.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section class="section" id="ingredients">
+      <div class="container ingredients">
+        <div class="ingredients__intro reveal">
+          <p class="eyebrow">Ingredients</p>
+          <h2>Short lists. Clear purpose.</h2>
+          <p class="lead">Every ingredient earns its place. No hidden fragrance blends, no filler oils — just what works.</p>
+        </div>
+        <div class="ing-grid">
+          <article class="ing reveal"><div class="ing__icon">🌿</div><h3>Centella</h3><p>Soothes and supports the skin barrier.</p></article>
+          <article class="ing reveal"><div class="ing__icon">💧</div><h3>Hyaluronic acid</h3><p>Pulls water into the skin for lasting bounce.</p></article>
+          <article class="ing reveal"><div class="ing__icon">✨</div><h3>Niacinamide</h3><p>Helps even tone and refine the look of pores.</p></article>
+          <article class="ing reveal"><div class="ing__icon">🛡️</div><h3>Ceramides</h3><p>Rebuild the protective layer dry skin is missing.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUNDLE BUILDER -->
+    <section class="section section--dark" id="bundle">
+      <div class="container bundle">
+        <div class="reveal">
+          <p class="eyebrow eyebrow--light">Build your bundle</p>
+          <h2>Pick 3 or more, save 15%</h2>
+          <p class="lead lead--light">Choose the products you want — the discount applies automatically.</p>
+        </div>
+        <div class="bundle__box reveal">
+          <div class="bundle__list" id="bundleList"></div>
+          <div class="bundle__total">
+            <div>
+              <span class="bundle__label" id="bundleLabel">Select at least 3 products</span>
+              <span class="bundle__price"><s id="bundleOld"></s> <strong id="bundleNew">$0.00</strong></span>
+            </div>
+            <button class="btn btn--accent" id="bundleAdd" disabled>Add bundle to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq">
+        <div class="section__head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Good questions</h2>
+        </div>
+        <div class="faq__list reveal">
+          <details><summary>Is this routine okay for sensitive skin?</summary><p>Yes. Every product is fragrance-free or offered in a fragrance-free version, and the textures are designed to be gentle. Patch-test anything new first.</p></details>
+          <details><summary>How long does one set last?</summary><p>With daily morning use, one set lasts about 8–10 weeks.</p></details>
+          <details><summary>Do you ship internationally?</summary><p>We ship to 30+ countries. Shipping is free on orders over $40.</p></details>
+          <details><summary>What if it doesn't suit my skin?</summary><p>Return opened products within 30 days for a full refund — no forms, no fuss.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section section--tint">
+      <div class="container newsletter reveal">
+        <h2>Get 10% off your first order</h2>
+        <p class="lead">Skincare tips and early access to new launches. No spam.</p>
+        <form class="newsletter__form" id="newsForm">
+          <input type="email" placeholder="you@example.com" aria-label="Email address" required>
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter__msg" id="newsMsg" hidden>Thanks! (This is a demo — no email was sent.)</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="logo logo--light">aurelle<span>.</span></a>
+      <p>Concept project designed &amp; built by <strong>Nafis A.</strong> — Aurelle is a fictional brand, not a real store.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
