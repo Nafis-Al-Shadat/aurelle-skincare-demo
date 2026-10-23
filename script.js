@@ -1,14 +1,25 @@
 // Product data — one source for the shop grid and the bundle builder
 const products = [
-  { id: 1, name: "Cloud Gel Cleanser", tag: "Cleanse", cat: "cleanse", price: 18, desc: "Low-foam gel that cleans without the tight feeling.", color: "#E9D5C3", bg: "#F3EBE1" },
-  { id: 2, name: "Calm Tone Serum", tag: "Treat", cat: "treat", price: 32, desc: "10% niacinamide + centella for even, calm skin.", color: "#C8775A", bg: "#F5E3D9" },
-  { id: 3, name: "Dew Drop Essence", tag: "Hydrate", cat: "hydrate", price: 26, desc: "Hyaluronic acid layers for instant bounce.", color: "#A8BFB1", bg: "#E4EDE7" },
-  { id: 4, name: "Barrier Whip Cream", tag: "Hydrate", cat: "hydrate", price: 29, desc: "Ceramide cream with a weightless finish.", color: "#2C5148", bg: "#DDE6E1" },
-  { id: 5, name: "Soft Polish Exfoliant", tag: "Treat", cat: "treat", price: 24, desc: "Gentle PHA exfoliant for twice-weekly glow.", color: "#D9A88F", bg: "#F6E8DF" },
-  { id: 6, name: "Melt Cleansing Balm", tag: "Cleanse", cat: "cleanse", price: 22, desc: "Melts sunscreen and makeup in seconds.", color: "#EBC6B3", bg: "#F7ECE5" },
-  { id: 7, name: "Daily Shield SPF 50", tag: "Treat", cat: "treat", price: 28, desc: "Sheer sunscreen with no white cast.", color: "#F0D9A8", bg: "#F8F0DD" },
-  { id: 8, name: "Overnight Repair Mask", tag: "Hydrate", cat: "hydrate", price: 34, desc: "Sleep mask that wakes up dull, tired skin.", color: "#7E9A8B", bg: "#E1EAE4" },
+  { id: 1, name: "Cloud Gel Cleanser", tag: "Cleanse", cat: "cleanse", price: 18, desc: "Low-foam gel that cleans without the tight feeling.", img: "img/p1-cleanser.jpg" },
+  { id: 2, name: "Calm Tone Serum", tag: "Treat", cat: "treat", price: 32, desc: "10% niacinamide + centella for even, calm skin.", img: "img/p2-serum.jpg" },
+  { id: 3, name: "Dew Drop Essence", tag: "Hydrate", cat: "hydrate", price: 26, desc: "Hyaluronic acid layers for instant bounce.", img: "img/p3-essence.jpg" },
+  { id: 4, name: "Barrier Whip Cream", tag: "Hydrate", cat: "hydrate", price: 29, desc: "Ceramide cream with a weightless finish.", img: "img/p4-cream.jpg" },
+  { id: 5, name: "Soft Polish Exfoliant", tag: "Treat", cat: "treat", price: 24, desc: "Gentle PHA exfoliant for twice-weekly glow.", img: "img/p5-exfoliant.jpg" },
+  { id: 6, name: "Melt Cleansing Balm", tag: "Cleanse", cat: "cleanse", price: 22, desc: "Melts sunscreen and makeup in seconds.", img: "img/p6-balm.jpg" },
+  { id: 7, name: "Daily Shield SPF 50", tag: "Treat", cat: "treat", price: 28, desc: "Sheer sunscreen with no white cast.", img: "img/p7-spf.jpg" },
+  { id: 8, name: "Overnight Repair Mask", tag: "Hydrate", cat: "hydrate", price: 34, desc: "Sleep mask that wakes up dull, tired skin.", img: "img/p8-mask.jpg" },
 ];
+
+// Lucide icons (ISC licence), inlined so the page needs no icon library
+const icons = {
+  leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+  droplets: '<path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>',
+  sparkles: '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>',
+  shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+};
+document.querySelectorAll("[data-icon]").forEach((el) => {
+  el.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[el.dataset.icon]}</svg>`;
+});
 
 const BUNDLE_MIN = 3;
 const BUNDLE_DISCOUNT = 0.15;
@@ -18,10 +29,6 @@ let cartCount = 0;
 const cartCountEl = document.getElementById("cartCount");
 const toastEl = document.getElementById("toast");
 let toastTimer;
-
-function bottleSvg(color) {
-  return `<svg viewBox="0 0 100 200"><rect x="38" y="0" width="24" height="26" rx="5" fill="#1F3B34"/><rect x="32" y="24" width="36" height="12" rx="4" fill="#2C5148"/><rect x="12" y="36" width="76" height="160" rx="26" fill="${color}"/><rect x="22" y="96" width="56" height="50" rx="8" fill="#F6F1EA"/><text x="50" y="126" text-anchor="middle" font-family="Fraunces" font-size="11" fill="#1F3B34">aurelle</text></svg>`;
-}
 
 function showToast(text) {
   toastEl.textContent = text;
@@ -43,7 +50,7 @@ function addToCart(qty, label) {
 const grid = document.getElementById("products");
 grid.innerHTML = products.map((p) => `
   <article class="product reveal" data-cat="${p.cat}">
-    <div class="product__img" style="background:${p.bg}">${bottleSvg(p.color)}</div>
+    <div class="product__img"><img src="${p.img}" alt="${p.name}" loading="lazy" width="1024" height="1024"></div>
     <span class="product__tag">${p.tag}</span>
     <h3>${p.name}</h3>
     <p>${p.desc}</p>
@@ -82,6 +89,7 @@ const bundleAdd = document.getElementById("bundleAdd");
 bundleList.innerHTML = products.slice(0, 6).map((p) => `
   <label class="bundle__item">
     <input type="checkbox" value="${p.id}">
+    <img class="bundle__thumb" src="${p.img}" alt="" loading="lazy" width="40" height="40">
     <span>${p.name}</span>
     <span>${money(p.price)}</span>
   </label>`).join("");
